@@ -4,19 +4,15 @@
 	 * Load WordPress dependencies
 	 * This is the same as importing the dependencies in an ES2015+ environment
 	 */
-	let __ = wp.i18n.__;
+	const __ = wp.i18n.__;
 
-	let createElement = window.wp.element.createElement;
+	const createElement = window.wp.element.createElement;
 
-	let useBlockProps 	  = window.wp.blockEditor.useBlockProps;
-	let BlockControls 	  = window.wp.blockEditor.BlockControls;
-	let AlignmentControl  = window.wp.blockEditor.AlignmentControl;
-	let InspectorControls = window.wp.blockEditor.InspectorControls;
+	const { useBlockProps, BlockControls, AlignmentControl, InspectorControls } = window.wp.blockEditor
 
-	let PanelBody   = window.wp.components.PanelBody;
-	let TextControl = window.wp.components.TextControl;
+	const { PanelBody, TextControl } = window.wp.components
 
-	let registerBlockType = window.wp.blocks.registerBlockType;
+	const registerBlockType = window.wp.blocks.registerBlockType;
 
 	/**
 	 * Every block starts by registering a new block type definition.
