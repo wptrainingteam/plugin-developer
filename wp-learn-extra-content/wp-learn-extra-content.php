@@ -1,8 +1,13 @@
 <?php
-/*
-Plugin Name: WP Learn Extra Content
-Version: 1.0.0
-*/
+/**
+ * Plugin Name: WP Learn Extra Content
+ * Version: 1.0.0
+ */
+
+register_activation_hook( __FILE__, 'wp_learn_extra_content_activation' );
+function wp_learn_extra_content_activation() {
+	add_option( 'wp_learn_extra_content_extra_option', 'Default extra content' );
+}
 
 add_action( 'admin_init', 'wp_learn_extra_content_add_option' );
 function wp_learn_extra_content_add_option() {
@@ -25,4 +30,9 @@ function wp_learn_extra_content_add_extra_option( $content ) {
 	$content .= '<p>' . esc_html( $extra_option ) . '</p>';
 
 	return $content;
+}
+
+register_deactivation_hook( __FILE__, 'wp_learn_extra_content_deactivation' );
+function wp_learn_extra_content_deactivation() {
+	delete_option( 'wp_learn_extra_content_extra_option' );
 }
