@@ -12,6 +12,9 @@ updates:
     # Check the npm registry for updates every week
     schedule:
       interval: "weekly"
+    # Raise all npm pull requests with assignees
+    assignees:
+      - "jonathanbossenger"  
 
   # Enable version updates for npm in dynamic-copyright-date-block
   - package-ecosystem: "npm"
@@ -20,3 +23,6 @@ updates:
     # Check the npm registry for updates every week
     schedule:
       interval: "weekly"
+    # Raise all npm pull requests with assignees
+    assignees:
+      - "jonathanbossenger"
